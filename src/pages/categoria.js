@@ -13,7 +13,7 @@ export default function Categoria() {
     }, []);
 
     return (
-        <main className="bg-gray-500 w-full h-screen">
+        <main className="bg-zinc-400 w-full h-screen">
             <h1>Categoria</h1>
             <ul>
                 {users.map((user) => {
