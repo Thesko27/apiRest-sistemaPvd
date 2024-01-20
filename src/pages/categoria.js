@@ -3,10 +3,14 @@ import api from "../services/api";
 
 export default function Categoria() {
     let [users, setUsers] = useState([]);
-    const todasCategorias = () => {
-        api.get("/categoria ").then((response) => {
-            setUsers(response.data);
-        });
+    const todasCategorias = async () => {
+        try {
+            await api.get("/categoria ").then((response) => {
+                setUsers(response.data);
+            });
+        } catch (error) {
+            console.log("Erro: ", error);
+        }
     };
     useEffect(() => {
         todasCategorias();
